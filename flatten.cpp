@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 
@@ -24,10 +25,23 @@ using namespace std;
 
 class Solution {
 public:
-    //对每个子树重复做:将左子树摘下来,放在右子树上,并将原来右子树上的节点接在左子树后
+    //二叉树的前序遍历(根左右)
     void flatten(TreeNode* root) {
-        if(root->left){
-            flatten(root->left);
+        vector<TreeNode *> node;
+        preorder(root, node);
+        int size = node.size();
+        for (int i = 1; i < size; i++) {
+            TreeNode *prev = node.at(i - 1), curr = node.at(i);
+            prev->left = nullptr_t;
+            prev->right = curr;
+        }
+    }
+
+    void preorder(TreeNode* root, vector<TreeNode*> &node) {
+        if(root) {
+            node.push_back(root);
+            preorder(root->left, node);
+            preorder(root->right, node);
         }
     }
 };
