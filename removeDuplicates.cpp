@@ -1,5 +1,6 @@
 /*
     在原地使用O(1)的空间删除排序数组中的元素
+    返回移除多余的元素后数组的新长度
  */
 #include <iostream>
 #include <vector>

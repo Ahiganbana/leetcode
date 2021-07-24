@@ -6,7 +6,7 @@
     "code-runner.runInTerminal": true, // 设置成false会在“输出”中输出，无法输入
     "code-runner.executorMap": {
         "c": "cd $dir && clang '$fileName' -o '$fileNameWithoutExt.exe' -Wall -g -O2 -static-libgcc --target=x86_64-w64-mingw -std=c11 && &'$dir$fileNameWithoutExt'",
-        "cpp": "cd $dir && clang++ '$fileName' -o '$fileNameWithoutExt.exe' -Wall -g -O2 -static-libgcc --target=x86_64-w64-mingw -std=c++17 && &'$dir$fileNameWithoutExt'"
+        "cpp": "cd $dir && clang++ '$fileName' -o '$fileNameWithoutExt.exe' -Wall -g -O2 -static-libgcc --target=x86_64-w64-mingw -std=c++11 && &'$dir$fileNameWithoutExt'"
         // "c": "cd $dir && clang $fileName -o $fileNameWithoutExt.exe -Wall -g -O2 -static-libgcc --target=x86_64-w64-mingw -std=c11 && $dir$fileNameWithoutExt",
         // "cpp": "cd $dir && clang++ $fileName -o $fileNameWithoutExt.exe -Wall -g -O2 -static-libgcc --target=x86_64-w64-mingw -std=c++17 && $dir$fileNameWithoutExt"
     }, // 控制code runner命令；未注释的仅适用于PowerShell（Win10默认），注释掉的适用于cmd（win7默认）
@@ -27,7 +27,7 @@
     ],
     "clang.cxxflags": [ // 控制c++静态检测时的参数
         "--target=x86_64-w64-mingw",
-        "-std=c++17",
+        "-std=c++11",
         "-Wall"
     ],
     "clang.completion.enable": true,
@@ -71,6 +71,13 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "queue": "cpp",
+        "unordered_set": "cpp",
+        "set": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "regex": "cpp",
+        "valarray": "cpp"
     } // 效果比cpptools要好
 }

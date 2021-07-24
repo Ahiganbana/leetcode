@@ -3,6 +3,7 @@
 #include <algorithm>
 using namespace std;
 
+//没有重复元素的数组求给定数字和的所有解集,每个数字可以反复选取
 class Solution{
 private:
     vector<int> candidates;

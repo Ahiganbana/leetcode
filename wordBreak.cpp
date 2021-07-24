@@ -21,7 +21,7 @@ public:
         if(size == 0) {
             return true;
         }
-        bool dp[size + 1];
+        bool dp[size + 1]; 
         dp[0] = true;
 
         vector<string>::iterator iter;
