@@ -31,7 +31,6 @@ public:
         }
     }
 };
-
 int main() {
     string a = "123";
     string b = "abc";

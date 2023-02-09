@@ -34,18 +34,19 @@ public:
         }
         visited[i][j] = true;
         vector<pair<int, int>> direction = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
-        bool result = true;
+        bool result = false;
         //遍历每个方向
         for(auto const& dir : direction){
             int nextRow = i + dir.first, nextColumn = j + dir.second;
             if(nextRow >= 0 && nextRow < board.size() && nextColumn >= 0 && nextColumn < board[0].size()) {
                 if(!visited[nextRow][nextColumn]) {
                     bool flag = check(board, visited, nextRow, nextColumn, s, k + 1);
+                    if(flag) {
+                        result = true;
+                        break;
+                    }
                 }
-            }
-            if(flag) {
-                result = true;
-                break;
+
             }
         }
         visited[i][j] = false;
